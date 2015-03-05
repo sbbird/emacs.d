@@ -23,6 +23,12 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; ido-mode
+(require 'ido)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode t)
+(ido-vertical-mode t)
 ;; show number of lines
 (global-linum-mode 1)
 
@@ -56,7 +62,7 @@
 ;; ace-window for select window quickly
 ;; use mac command key as super
 (setq mac-command-modifier 'super)
-(global-set-key (kbd "s-0") 'ace-window)
+(global-set-key (kbd "s-o") 'ace-window)
 
 ;; move multiple lines
 (global-set-key (kbd "M-n")
