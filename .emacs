@@ -14,6 +14,7 @@
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
  '(inhibit-startup-screen t)
+ '(js3-enter-indents-newline t)
  '(ruby-deep-indent-paren nil)
  '(ruby-deep-indent-paren-style nil))
 (custom-set-faces
