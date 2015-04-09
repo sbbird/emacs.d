@@ -14,7 +14,9 @@
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
  '(inhibit-startup-screen t)
- '(js3-enter-indents-newline t)
+ '(js2-basic-offset 2)
+ '(indent-tabs-mode nil)
+ '(js2-enter-indents-newline t)
  '(ruby-deep-indent-paren nil)
  '(ruby-deep-indent-paren-style nil))
 (custom-set-faces
@@ -72,5 +74,14 @@
 		(lambda () (interactive) (previous-line 5)))
 
 ;; grep
-
 (global-set-key (kbd "s-f") 'rgrep)
+
+;; js2-mode
+(require 'js2-mode)
+(add-hook 'js-mode-hook 'js2-mode)
+(eval-after-load 'js2-mode
+  '(define-key js2-mode-map (kbd "C-c b") 'web-beautify-js))
+(put 'upcase-region 'disabled nil)
+
+;; auto cleanup whitespace
+(add-hook 'before-save-hook 'whitespace-cleanup)
